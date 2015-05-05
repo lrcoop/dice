@@ -1,0 +1,38 @@
+#card-flips {
+    border: 1px solid #000;
+    margin: 0 auto;
+    width: 80%;
+    ul {
+        list-style-type: none;
+        display: table;
+        padding: 0;
+        width: 100%;
+        li {
+            border: 1px solid #000;
+            display: table-cell;
+            vertical-align: middle;
+            width: 9%;
+            text-align: center;
+            height: 50px;
+
+            &.shut {
+            	opacity: 0.8;
+            	background: red;
+            }
+        }
+    }
+}
+#dice {
+    display: table;
+    margin: 0 auto;
+    width: 80%;
+    .die {
+        width: 30%;
+        display: table-cell;
+        margin: 50px auto;
+        height: 80px;
+        border: 1px solid red;
+        vertical-align: middle;
+        text-align: center;
+    }
+}

@@ -1,0 +1,54 @@
+#card-flips {
+  border: 1px solid #000;
+  margin: 0 auto;
+  width: 80%; }
+  #card-flips ul {
+    list-style-type: none;
+    display: table;
+    padding: 0;
+    width: 100%; }
+    #card-flips ul li {
+      border: 1px solid #000;
+      display: table-cell;
+      vertical-align: middle;
+      width: 9%;
+      text-align: center;
+      height: 50px; }
+      #card-flips ul li.shut {
+        opacity: 0.8;
+        background: red; }
+
+#dice {
+  display: table;
+  margin: 0 auto;
+  width: 80%; }
+  #dice .die {
+    width: 30%;
+    display: table-cell;
+    margin: 50px auto;
+    height: 80px;
+    border: 1px solid red;
+    vertical-align: middle;
+    text-align: center; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/**
+ * Image replacement
+ */
+.is-hidden {
+  display: none; }
+
+.is-visible {
+  display: block !important; }
+
+/*# sourceMappingURL=style.css.map */
