@@ -15,7 +15,7 @@
       text-align: center;
       height: 50px; }
       #card-flips ul li.selected {
-        background: grey;
+        background: #efefef;
         color: white;
         opacity: 0.6; }
       #card-flips ul li.shut {
