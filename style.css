@@ -14,9 +14,13 @@
       width: 9%;
       text-align: center;
       height: 50px; }
+      #card-flips ul li.selected {
+        background: grey;
+        color: white;
+        opacity: 0.6; }
       #card-flips ul li.shut {
         opacity: 0.8;
-        background: red; }
+        background: green; }
 
 #dice {
   display: table;
@@ -30,6 +34,13 @@
     border: 1px solid red;
     vertical-align: middle;
     text-align: center; }
+
+.game-over {
+  opacity: 0;
+  visibility: none; }
+  .game-over.show {
+    opacity: 1;
+    visibility: visible; }
 
 /*
  * Clearfix: contain floats

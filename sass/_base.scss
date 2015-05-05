@@ -14,10 +14,14 @@
             width: 9%;
             text-align: center;
             height: 50px;
-
+            &.selected {
+                background: grey;
+                color: white;
+                opacity: 0.6;
+            }
             &.shut {
             	opacity: 0.8;
-            	background: red;
+            	background: green;
             }
         }
     }
@@ -34,5 +38,13 @@
         border: 1px solid red;
         vertical-align: middle;
         text-align: center;
+    }
+}
+.game-over {
+    opacity:0;
+    visibility: none;
+    &.show{
+        opacity:1;
+        visibility: visible;
     }
 }

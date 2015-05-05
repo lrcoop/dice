@@ -1,4 +1,5 @@
 var selectedCards = [],
+    unusedCards = [],
  rollDice = function () {
     var dice = Math.floor(Math.random() * (6 - 1) + 1),
 
@@ -30,12 +31,19 @@ $(document).ready(function(){
     diceRoller();
     diceTotal();
     console.log(totalRoll);
-    $('#card-flips ul').children('li').addClass('selectable');
+    if($('#card-flips ul').children('li').hasClass('shut')){
+        return false;
+    } else {
+        $('#card-flips ul').children('li').addClass('selectable');
+    }
+    $(this).addClass('diabled');
+
 
   });
+
   $('li').on('click', function(){
 
-    if ($(this).hasClass('selectable') && !$(this).hasClass('shut')){
+    if ($(this).hasClass('selectable') && !$(this).hasClass('shut') && !$(this).hasClass('selected')){
         var cardVal = $(this).text();
 
         console.log(cardVal);
@@ -44,17 +52,45 @@ $(document).ready(function(){
         console.log(selectedCards);
 
 
-        $(this).addClass('shut');
-        var sum = selectedCards.reduce(add, 0);
+        $(this).addClass('selected');
 
-            function add(a, b) {
-                return a + b;
-            };
-        console.log(sum);
     } else {
         return false;
     }
 
   });
+  $('#end-turn').on('click', function(){
+    var sum = selectedCards.reduce(add, 0);
+
+            function add(a, b) {
+                return a + b;
+            };
+        console.log(sum);
+        if (sum === totalRoll){
+            $('li.selected').removeClass().addClass('shut');
+            selectedCards.length = 0;
+            console.log(selectedCards);
+        } else {
+            alert('cards flipped does not math total sum');
+            $('li.selected').removeClass('selected');
+            selectedCards.length = 0;
+        }
+    });
+  $('#end-game').on('click', function(){
+    $('li.selectable').each(function(i){
+        var unusedVal = $(this).text();
+            unusedCards.push(parseInt(unusedVal));
+
+    });
+    console.log(unusedCards);
+    var endSum = unusedCards.reduce(add, 0);
+
+            function add(a, b) {
+                return a + b;
+            };
+            $('#end-val').text(endSum);
+            $('.game-over').toggleClass('show');
+  });
+
 
 });
