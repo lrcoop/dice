@@ -1,28 +1,64 @@
+h1 {
+  color: #3399cc;
+  font-size: 36px;
+  margin: 0 auto 20px;
+  text-align: center;
+  text-shadow: 3px 2px #666;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #000; }
+
+h2 {
+  text-align: center;
+  text-shadow: 3px 2px #3399cc;
+  font-size: 28px;
+  margin: 0 auto 10px; }
+
+p {
+  color: #3399cc;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #666; }
+
+button {
+  background: #666;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: 0;
+  padding: 10px 0;
+  text-align: center;
+  text-shadow: 2px 2px #000;
+  transition: all .25s ease;
+  width: 100px; }
+  button:disabled {
+    color: #efefef;
+    opacity: 0.5; }
+
 #wrapper {
-  width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 80%; }
 
 #card-flips {
-  width: 100%;
+  float: left;
+  margin: 0 auto 20px;
   text-align: center;
-  float: left; }
+  width: 100%; }
   #card-flips:after {
     clear: both; }
-  #card-flips h1 {
-    text-align: center;
-    text-shadow: 3px 2px #3399cc;
-    font-size: 36px; }
   #card-flips div {
-    border: 2px solid #000;
     background: #3399cc;
     border-radius: 5px;
-    width: 50px;
-    height: 60px;
-    position: relative;
+    border: 2px solid #000;
     display: inline-block;
+    height: 50px;
+    position: relative;
     transition: all .5s ease-in-out;
     -webkit-transition: all .25s ease-in-out;
-    -moz-transition: all .5s ease-in-out; }
+    -moz-transition: all .5s ease-in-out;
+    width: 40px; }
     #card-flips div.selected {
       background: #efefef;
       opacity: 0.6; }
@@ -31,46 +67,74 @@
       #card-flips div.shut span:first-child {
         opacity: 0; }
       #card-flips div.shut span:last-child {
-        width: 50px;
-        height: 60px;
-        border-radius: 0px;
-        position: absolute;
         background: #000;
+        border-radius: 0px;
+        height: 50px;
         left: 0px;
-        top: 0px;
         opacity: 1;
+        position: absolute;
+        top: 0px;
+        transition: width .5s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out, left .5s ease-in-out;
         visibility: visible;
-        transition: width .5s ease, opacity .5s ease, visibility .5s ease, left .5s ease; }
+        width: 40px; }
     #card-flips div span {
+      display: table-cell;
       font-size: 22px;
       font-weight: bold;
-      display: table-cell;
-      width: 50px;
-      height: 60px;
+      height: 50px;
       text-align: center;
+      text-shadow: 1px 1px #efefef;
       vertical-align: middle;
-      text-shadow: 1px 1px #efefef; }
+      width: 40px; }
       #card-flips div span:last-child {
-        width: 0;
-        height: 0;
-        transition: width .5s ease;
-        position: absolute;
-        left: 50px;
+        left: 40px;
         opacity: 0;
-        visibility: hidden; }
+        position: absolute;
+        visibility: hidden;
+        height: 0;
+        transition: width .25s ease-in-out;
+        width: 0; }
 
 #dice {
-  display: table;
-  margin: 0 auto;
-  width: 80%; }
+  margin: 20px auto 0;
+  text-align: center;
+  width: 100%; }
   #dice .die {
-    width: 30%;
-    display: table-cell;
-    margin: 50px auto;
-    height: 80px;
-    border: 1px solid #cc3333;
-    vertical-align: middle;
-    text-align: center; }
+    background: #efefef;
+    border-radius: 10px;
+    border: 3px solid #3399cc;
+    color: #000;
+    display: inline-block;
+    font-size: 28px;
+    height: 25px;
+    line-height: 28px;
+    margin: 0 10px 10px 0;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px #3399cc;
+    width: 25px; }
+    #dice .die.die2 {
+      margin-right: 0; }
+
+.button-wrapper {
+  float: left;
+  margin: 0 auto 45px;
+  position: relative;
+  text-align: center;
+  width: 100%; }
+  .button-wrapper button {
+    display: inline-block;
+    margin-right: 10px; }
+    .button-wrapper button:last-child {
+      margin-right: 0; }
+
+#roll-total {
+  color: #000;
+  display: block;
+  font-size: 25px;
+  height: 25px;
+  margin: 0 auto 10px;
+  text-shadow: 2px 2px #3399cc; }
 
 /*
  * Clearfix: contain floats

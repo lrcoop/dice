@@ -25,6 +25,11 @@ diceTotal = function(){
     var totalDiceSum = diceRoller();
     $('#roll-total').text(totalRoll);
 },
+add = function(a,b) {
+
+                return a + b;
+
+},
 resetGame = function(){
     selectedCards.length = 0;
     unusedCards.length = 0;
@@ -38,12 +43,12 @@ resetGame = function(){
 };
 
 $(document).ready(function(){
-    // disable click until end turn or end game is clicked
+
 
   $('#roll-dice').on('click', function(){
     diceRoller();
     diceTotal();
-    console.log(totalRoll);
+
     $(this).attr('disabled', true);
     $('#end-turn').attr('disabled', false);
     if($('#card-flips').children('div').hasClass('shut')){
@@ -57,11 +62,11 @@ $(document).ready(function(){
   });
 
 
-// Need to revisit so can unselect before ending turn
+
   $('#card-flips div').on('click', function(){
 
     if ($(this).hasClass('selectable') && !$(this).hasClass('shut')){
-       // var cardVal = $(this).text();
+
         $(this).toggleClass('selected');
 
     } else {
@@ -72,19 +77,17 @@ $(document).ready(function(){
   $('#end-turn').on('click', function(){
     $('.selected').each(function(){
         var cardVal = $(this).children('span:first-child').text();
-        selectedCards.push(parseInt(cardVal));
+        selectedCards.push(Number(cardVal));
 
     });
     var sum = selectedCards.reduce(add, 0);
 
-            function add(a, b) {
-                return a + b;
-            };
-        console.log(sum);
+
+
         if (sum === totalRoll){
             $('.selected').removeClass().addClass('shut');
             selectedCards.length = 0;
-            console.log(selectedCards);
+
             $('#roll-dice').attr('disabled', false);
             $(this).attr('disabled', true);
             $('#end-game').attr('disabled', false);
@@ -98,15 +101,13 @@ $(document).ready(function(){
   $('#end-game').on('click', function(){
     $('.selectable').each(function(i){
         var unusedVal = $(this).text();
-            unusedCards.push(parseInt(unusedVal));
+            unusedCards.push(Number(unusedVal));
 
     });
 
     var endSum = unusedCards.reduce(add, 0);
 
-            function add(a, b) {
-                return a + b;
-            };
+
     alert('Game Over: You did not win.\nYour end score was: ' + endSum +'\nPress ok to reset');
     resetGame();
   });
