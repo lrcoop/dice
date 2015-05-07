@@ -1,30 +1,86 @@
-#card-flips {
-    border: 1px solid #000;
-    margin: 0 auto;
+#wrapper {
     width: 80%;
-    ul {
-        list-style-type: none;
-        display: table;
-        padding: 0;
-        width: 100%;
-        li {
-            border: 1px solid #000;
-            display: table-cell;
-            vertical-align: middle;
-            width: 9%;
-            text-align: center;
-            height: 50px;
-            &.selected {
-                background: #efefef;
-                color: white;
+    margin: 0 auto;
+}
+#card-flips {
+    width: 100%;
+    text-align: center;
+    float: left;
+    &:after{
+        clear: both;
+    }
+    h1 {
+        text-align: center;
+        text-shadow: 3px 2px #3399cc;
+        font-size: 36px;
+    }
+
+    div {
+        border: 2px solid #000;
+        background: #3399cc;
+        border-radius: 5px;
+
+        width: 50px;
+        height: 60px;
+        position: relative;
+        display: inline-block;
+        transition: all .5s ease-in-out;
+            -webkit-transition: all .25s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+
+        &.selected {
+            background: #efefef;
+
                 opacity: 0.6;
+        }
+        &.shut {
+            opacity: 0.7;
+            span {
+
+                &:first-child {
+                    opacity: 0;
+                }
+
+                &:last-child{
+                   width: 50px;
+                height:60px;
+                border-radius: 0px;
+                position: absolute;
+                background: #000;
+                left:0px;
+                top: 0px;
+                opacity: 1;
+                visibility: visible;
+                transition: width .5s ease, opacity .5s ease, visibility .5s ease, left .5s ease;
+
+                }
+
             }
-            &.shut {
-            	opacity: 0.8;
-            	background: green;
+
+
+        }
+        span {
+
+            font-size:22px;
+            font-weight: bold;
+            display: table-cell;
+            width: 50px;
+            height: 60px;
+            text-align: center;
+            vertical-align: middle;
+            text-shadow: 1px 1px #efefef;
+            &:last-child {
+                width:0;
+                height:0;
+                transition: width .5s ease;
+                    position: absolute;
+                    left: 50px;
+                    opacity: 0;
+                    visibility: hidden;
             }
         }
     }
+
 }
 #dice {
     display: table;
@@ -35,16 +91,9 @@
         display: table-cell;
         margin: 50px auto;
         height: 80px;
-        border: 1px solid red;
+        border: 1px solid #cc3333;
         vertical-align: middle;
         text-align: center;
     }
 }
-.game-over {
-    opacity:0;
-    visibility: none;
-    &.show{
-        opacity:1;
-        visibility: visible;
-    }
-}
+
