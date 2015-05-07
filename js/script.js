@@ -25,10 +25,15 @@ diceTotal = function(){
     var totalDiceSum = diceRoller();
     $('#roll-total').text(totalRoll);
 },
+add = function(a,b) {
+
+                return a + b;
+
+},
 resetGame = function(){
     selectedCards.length = 0;
     unusedCards.length = 0;
-    $('#card-flips ul').children('li').removeClass();
+    $('#card-flips').children('div').removeClass();
     $('#roll-total').text('');
     $('.die1').text('');
     $('.die2').text('');
@@ -46,10 +51,10 @@ $(document).ready(function(){
 
     $(this).attr('disabled', true);
     $('#end-turn').attr('disabled', false);
-    if($('#card-flips ul').children('li').hasClass('shut')){
+    if($('#card-flips').children('div').hasClass('shut')){
         return false;
     } else {
-        $('#card-flips ul').children('li').addClass('selectable');
+        $('#card-flips').children('div').addClass('selectable');
     }
 
 
@@ -58,7 +63,7 @@ $(document).ready(function(){
 
 
 
-  $('li').on('click', function(){
+  $('#card-flips div').on('click', function(){
 
     if ($(this).hasClass('selectable') && !$(this).hasClass('shut')){
 
@@ -70,19 +75,17 @@ $(document).ready(function(){
 
   });
   $('#end-turn').on('click', function(){
-    $('li.selected').each(function(){
-        var cardVal = $(this).text();
-        selectedCards.push(parseInt(cardVal));
+    $('.selected').each(function(){
+        var cardVal = $(this).children('span:first-child').text();
+        selectedCards.push(Number(cardVal));
 
     });
     var sum = selectedCards.reduce(add, 0);
 
-            function add(a, b) {
-                return a + b;
-            };
+
 
         if (sum === totalRoll){
-            $('li.selected').removeClass().addClass('shut');
+            $('.selected').removeClass().addClass('shut');
             selectedCards.length = 0;
 
             $('#roll-dice').attr('disabled', false);
@@ -90,23 +93,21 @@ $(document).ready(function(){
             $('#end-game').attr('disabled', false);
         } else {
             alert('cards flipped do not equal total sum');
-            $('li.selected').removeClass('selected');
+            $('.selected').removeClass('selected');
             selectedCards.length = 0;
         }
 
     });
   $('#end-game').on('click', function(){
-    $('li.selectable').each(function(i){
+    $('.selectable').each(function(i){
         var unusedVal = $(this).text();
-            unusedCards.push(parseInt(unusedVal));
+            unusedCards.push(Number(unusedVal));
 
     });
 
     var endSum = unusedCards.reduce(add, 0);
 
-            function add(a, b) {
-                return a + b;
-            };
+
     alert('Game Over: You did not win.\nYour end score was: ' + endSum +'\nPress ok to reset');
     resetGame();
   });

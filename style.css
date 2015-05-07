@@ -1,7 +1,7 @@
 h1 {
   color: #3399cc;
   font-size: 36px;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   text-align: center;
   text-shadow: 3px 2px #666;
   text-transform: uppercase;
@@ -68,12 +68,11 @@ button {
         opacity: 0; }
       #card-flips div.shut span:last-child {
         background: #000;
-        border-radius: 0px;
         height: 50px;
-        left: 0px;
+        left: 0;
         opacity: 1;
         position: absolute;
-        top: 0px;
+        top: 0;
         transition: width .5s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out, left .5s ease-in-out;
         visibility: visible;
         width: 40px; }
@@ -118,7 +117,7 @@ button {
 
 .button-wrapper {
   float: left;
-  margin: 0 auto 45px;
+  margin: 0 auto 30px;
   position: relative;
   text-align: center;
   width: 100%; }

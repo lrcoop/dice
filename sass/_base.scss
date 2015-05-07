@@ -1,170 +1,96 @@
-
 h1 {
-
     color: #3399cc;
-
     font-size: 36px;
-
-    margin: 0 auto 20px;
-
+    margin: 0 auto 30px;
     text-align: center;
-
     text-shadow: 3px 2px #666;
-
     text-transform: uppercase;
-
     -webkit-text-stroke: 1px;
-
     -webkit-text-stroke-color: #000;
-
 }
 
 h2 {
-
     text-align: center;
-
     text-shadow: 3px 2px #3399cc;
-
     font-size: 28px;
-
     margin: 0 auto 10px;
-
 }
 
 p {
-
     color:#3399cc;
-
     font-size: 20px;
-
     font-weight: bold;
-
     margin: 0 auto 20px;
-
     -webkit-text-stroke: 1px;
-
     -webkit-text-stroke-color: #666;
-
 }
 
 button {
-
     background: #666;
-
     border-radius: 8px;
-
     color: #fff;
-
     font-size: 14px;
-
     outline: 0;
-
     padding: 10px 0;
-
     text-align: center;
-
     text-shadow: 2px 2px #000;
-
     transition: all .25s ease;
-
     width: 100px;
-
     &:disabled {
-
         color: #efefef;
-
         opacity: 0.5;
-
     }
-
 }
 
 #wrapper {
-
     margin: 0 auto;
-
     width: 80%;
-
 }
 
 #card-flips {
-
     float: left;
-
     margin: 0 auto 20px;
-
     text-align: center;
-
     width: 100%;
-
     &:after {
-
         clear: both;
-
     }
-
     div {
-
         background: #3399cc;
-
         border-radius: 5px;
-
         border: 2px solid #000;
-
         display: inline-block;
-
         height: 50px;
-
         position: relative;
-
         transition: all .5s ease-in-out;
-
         -webkit-transition: all .25s ease-in-out;
-
         -moz-transition: all .5s ease-in-out;
-
         width: 40px;
 
         &.selected {
-
             background: #efefef;
-
             opacity: 0.6;
-
         }
 
         &.shut {
-
             opacity: 0.7;
 
             span {
 
                 &:first-child {
-
                     opacity: 0;
-
                 }
 
                 &:last-child {
-
                     background: #000;
-
-                    border-radius: 0px;
-
                     height:50px;
-
-                    left:0px;
-
+                    left:0;
                     opacity: 1;
-
                     position: absolute;
-
-                    top: 0px;
-
+                    top: 0;
                     transition: width .5s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out, left .5s ease-in-out;
 
                     visibility: visible;
-
                     width: 40px;
 
                 }
@@ -176,55 +102,33 @@ button {
         span {
 
             display: table-cell;
-
             font-size:22px;
-
             font-weight: bold;
-
             height: 50px;
-
             text-align: center;
-
             text-shadow: 1px 1px #efefef;
-
             vertical-align: middle;
-
             width: 40px;
 
             &:last-child {
-
                 left: 40px;
-
                 opacity: 0;
-
                 position: absolute;
-
                 visibility: hidden;
-
                 height:0;
-
                 transition: width .25s ease-in-out;
-
                 width:0;
-
             }
-
         }
-
     }
-
 }
 
 #dice {
-
     margin: 20px auto 0;
-
     text-align: center;
-
     width: 100%;
 
     .die {
-
         background: #efefef;
         border-radius: 10px;
         border: 3px solid #3399cc;
@@ -238,37 +142,25 @@ button {
         text-align: center;
         text-shadow: 2px 2px #3399cc;
         width: 25px;
-
         &.die2 {
-
             margin-right: 0;
-
         }
-
     }
-
 }
 
 .button-wrapper {
-
     float: left;
-
-    margin: 0 auto 45px;
-
+    margin: 0 auto 30px;
     position: relative;
-
     text-align: center;
-
     width: 100%;
 
     button {
 
         display:inline-block;
-
         margin-right: 10px;
 
         &:last-child {
-
             margin-right: 0;
 
         }
@@ -278,17 +170,11 @@ button {
 }
 
 #roll-total {
-
     color: #000;
-
     display:block;
-
     font-size: 25px;
-
     height: 25px;
-
     margin: 0 auto 10px;
-
     text-shadow: 2px 2px #3399cc;
 
 }
